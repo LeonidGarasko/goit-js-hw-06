@@ -1,22 +1,20 @@
 const form = document.querySelector('.login-form');
-const emeilEl = document.querySelector('input[type="emeil"]');
-const passwordEl = document.querySelector('input[type="password]');
+const emailEl = document.querySelector('input[type="email"]');
+const passwordEl = document.querySelector('input[type="password"]');
 
 form.addEventListener('submit', onFormSubmit);
 
-let user = { emeil: '', password: '' };
+let user = { email: '', password: '' };
 
 function onFormSubmit(event) {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
-    console.log(formData);
-
-    if (emeilEl === '' || passwordEl === '') {
+    
+    if (emailEl.value === '' || passwordEl.value === '') {
        return alert('All fields must be filled!');
     } 
     else {
-        user.emeil = emeilEl.value;
+        user.email = emailEl.value;
         user.password = passwordEl.value; 
     }
     document.querySelector('.login-form').reset();
