@@ -16,8 +16,8 @@ function onFormSubmit(event) {
        return alert('All fields must be filled!');
     } 
     else {
-        user.emeil = emeilEl;
-        user.password = passwordEl;
+        user.emeil = emeilEl.value;
+        user.password = passwordEl.value; 
     }
     document.querySelector('.login-form').reset();
     console.log(user)
